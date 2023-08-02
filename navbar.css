@@ -1,0 +1,108 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+}
+  
+.navbar-icon {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+  
+.dot {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+}
+  
+  /* Navbar content */
+.navbar-content {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #222;
+    position: absolute;
+    top: 40px; /* Adjust this value based on your layout */
+    left: 0;
+    width: 150px;
+    border: 1px solid #666;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+}
+  
+.navbar-content li {
+    padding: 10px;
+}
+  
+  /* Show the navbar content when isNavbarOpen is true */
+.navbar-content.visible {
+    visibility: visible;
+}
+  
+  /* Style links in the navbar content */
+.navbar-content a {
+    color: white;
+    text-decoration: none;
+}
+  
+.navbar-content a:hover {
+    background-color: #444;
+}
+  
+  /* Media query for responsive design */
+@media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .navbar-content {
+      position: static;
+      visibility: visible;
+      width: 100%;
+      background-color: #333;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 10px;
+      border: none;
+      padding: 0;
+    }
+  
+    .navbar-content li {
+      padding: 5px;
+    }
+  
+    .navbar-content a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+    }
+  
+    .navbar-content a:hover {
+      background-color: #444;
+    }
+  
+    /* Hide the icon when navbar content is visible */
+    .navbar-icon {
+      display: none;
+    }
+  
+    /* Show the icon when the navbar content is not visible */
+    .navbar-content.visible {
+      visibility: hidden;
+    }
+  
+    /* Show the navbar content when the icon is clicked */
+    .navbar.open .navbar-content {
+      visibility: visible;
+    }
+}
